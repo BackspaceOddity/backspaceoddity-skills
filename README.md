@@ -2,7 +2,7 @@
 
 Public collection of [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) skills from [Backspace Oddity](https://backspaceoddity.com).
 
-Five skills that cover the basics of running projects with Claude Code: setting up a new project, keeping a journal of what happened, picking up context next time, and proofing what you ship.
+Skills that cover the basics of running projects with Claude Code: setting up a new project, keeping a journal of what happened, picking up context next time, proofing what you ship — plus a methodology skill for JTBD-driven competitive analysis.
 
 ## What's included
 
@@ -13,10 +13,11 @@ Five skills that cover the basics of running projects with Claude Code: setting 
 | **`catch-up`** | Reads the journal + `CLAUDE.md` + saved context at the start of a session, so the next Claude works as if it were the same one from yesterday. | Start of every session, or "catch up" / "продолжай" |
 | **`self-qa`** | Universal quality gate before any deliverable — checks correctness, architecture, security, spec compliance, visual integrity, content, and numeric provenance. Lenses, not a monolithic checklist. | Before presenting any deliverable |
 | **`doc-proofreader`** | Six-pass review of any document before sharing — internal consistency, entity names, factual accuracy, structure, language, formatting. | Before publishing or "proofread" / "найди ошибки" |
+| **`backspaceoddity-jtbd`** | Competitive analysis through the Jobs-to-be-Done lens — main job by the core-functional formula (Verb + Object + Contextual Clarifier), 4–6 substitutes across five categories (direct, indirect, status quo, manual workaround, do nothing), one falsifiable research question. | "JTBD", "конкурентный анализ", "substitutes", "competitive mapping" |
 
 ## How they fit together
 
-These five skills form a small system, not a random pile:
+The core five skills form a small system, not a random pile:
 
 ```
 Start of session  →  catch-up         (read context)
