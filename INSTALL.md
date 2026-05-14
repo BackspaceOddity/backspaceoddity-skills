@@ -1,4 +1,4 @@
-# Installing bso-skills
+# Installing backspaceoddity-skills
 
 Two questions to decide first:
 
@@ -17,17 +17,17 @@ Defaults below assume **global + symlink** — works for most cases. Other optio
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/BackspaceOddity/bso-skills.git ~/bso-skills
+git clone https://github.com/BackspaceOddity/backspaceoddity-skills.git ~/backspaceoddity-skills
 ```
 
-You can clone anywhere — `~/bso-skills` is just the convention used in the snippets below. If you clone elsewhere, adjust the paths.
+You can clone anywhere — `~/backspaceoddity-skills` is just the convention used in the snippets below. If you clone elsewhere, adjust the paths.
 
 ### 2. Symlink each skill into Claude Code's global skills folder
 
 ```bash
 mkdir -p ~/.claude/skills
 
-for d in ~/bso-skills/skills/*/; do
+for d in ~/backspaceoddity-skills/skills/*/; do
   name=$(basename "$d")
   ln -s "$d" "$HOME/.claude/skills/$name"
 done
@@ -51,7 +51,7 @@ If a skill doesn't appear:
 If you only want, say, `project-journal`:
 
 ```bash
-ln -s ~/bso-skills/skills/project-journal ~/.claude/skills/project-journal
+ln -s ~/backspaceoddity-skills/skills/project-journal ~/.claude/skills/project-journal
 ```
 
 Restart Claude Code. Done.
@@ -63,7 +63,7 @@ If you want a skill active only in one specific project:
 ```bash
 cd /path/to/your-project
 mkdir -p .claude/skills
-ln -s ~/bso-skills/skills/scaffold .claude/skills/scaffold
+ln -s ~/backspaceoddity-skills/skills/scaffold .claude/skills/scaffold
 ```
 
 The skill will be loaded only when Claude Code opens that project folder.
@@ -73,7 +73,7 @@ The skill will be loaded only when Claude Code opens that project folder.
 If you want a stable snapshot that doesn't change when you `git pull`:
 
 ```bash
-for d in ~/bso-skills/skills/*/; do
+for d in ~/backspaceoddity-skills/skills/*/; do
   name=$(basename "$d")
   cp -r "$d" "$HOME/.claude/skills/$name"
 done
@@ -86,7 +86,7 @@ Trade-off: you won't get updates without re-running this. Use symlinks for livin
 If you installed via symlinks:
 
 ```bash
-cd ~/bso-skills
+cd ~/backspaceoddity-skills
 git pull
 ```
 
@@ -95,8 +95,8 @@ That's it — symlinks pick up the new content automatically.
 If you installed via copy: re-run the install command. Or run a sync:
 
 ```bash
-cd ~/bso-skills && git pull
-for d in ~/bso-skills/skills/*/; do
+cd ~/backspaceoddity-skills && git pull
+for d in ~/backspaceoddity-skills/skills/*/; do
   name=$(basename "$d")
   rm -rf "$HOME/.claude/skills/$name"
   cp -r "$d" "$HOME/.claude/skills/$name"
@@ -108,7 +108,7 @@ done
 Symlinks:
 
 ```bash
-for d in ~/bso-skills/skills/*/; do
+for d in ~/backspaceoddity-skills/skills/*/; do
   name=$(basename "$d")
   rm "$HOME/.claude/skills/$name"
 done
@@ -117,16 +117,16 @@ done
 Copies: same command (`rm -rf` instead of `rm`):
 
 ```bash
-for d in ~/bso-skills/skills/*/; do
+for d in ~/backspaceoddity-skills/skills/*/; do
   name=$(basename "$d")
   rm -rf "$HOME/.claude/skills/$name"
 done
 ```
 
-You can keep `~/bso-skills/` cloned for reference, or delete it:
+You can keep `~/backspaceoddity-skills/` cloned for reference, or delete it:
 
 ```bash
-rm -rf ~/bso-skills
+rm -rf ~/backspaceoddity-skills
 ```
 
 ## Troubleshooting
@@ -141,7 +141,7 @@ ls -la ~/.claude/skills/scaffold/SKILL.md
 
 **Permission denied on symlink.** On some systems `~/.claude/skills/` may not be writable. Check `ls -la ~/.claude/` and adjust permissions if needed.
 
-**Skill behaves differently than docs say.** Each skill is in `~/bso-skills/skills/<name>/SKILL.md` — read the `description` and body for that skill's exact triggers and behaviour. The SKILL.md is the source of truth.
+**Skill behaves differently than docs say.** Each skill is in `~/backspaceoddity-skills/skills/<name>/SKILL.md` — read the `description` and body for that skill's exact triggers and behaviour. The SKILL.md is the source of truth.
 
 ## Where each skill lives once installed
 
@@ -149,11 +149,11 @@ After running the default install, you'll have:
 
 ```
 ~/.claude/skills/
-├── scaffold/         → symlink → ~/bso-skills/skills/scaffold/
-├── project-journal/  → symlink → ~/bso-skills/skills/project-journal/
-├── catch-up/         → symlink → ~/bso-skills/skills/catch-up/
-├── self-qa/          → symlink → ~/bso-skills/skills/self-qa/
-└── doc-proofreader/  → symlink → ~/bso-skills/skills/doc-proofreader/
+├── scaffold/         → symlink → ~/backspaceoddity-skills/skills/scaffold/
+├── project-journal/  → symlink → ~/backspaceoddity-skills/skills/project-journal/
+├── catch-up/         → symlink → ~/backspaceoddity-skills/skills/catch-up/
+├── self-qa/          → symlink → ~/backspaceoddity-skills/skills/self-qa/
+└── doc-proofreader/  → symlink → ~/backspaceoddity-skills/skills/doc-proofreader/
 ```
 
 Each contains a `SKILL.md` file — that's the entire skill.

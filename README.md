@@ -1,4 +1,4 @@
-# bso-skills
+# backspaceoddity-skills
 
 Public collection of [Claude Code](https://docs.claude.com/en/docs/claude-code/overview) skills from [Backspace Oddity](https://backspaceoddity.com).
 
@@ -40,10 +40,10 @@ See [INSTALL.md](INSTALL.md) for full instructions. The short version:
 
 ```bash
 # Clone the repo
-git clone https://github.com/BackspaceOddity/bso-skills.git ~/bso-skills
+git clone https://github.com/BackspaceOddity/backspaceoddity-skills.git ~/backspaceoddity-skills
 
 # Install all skills globally (so they work in any project)
-for d in ~/bso-skills/skills/*/; do
+for d in ~/backspaceoddity-skills/skills/*/; do
   name=$(basename "$d")
   ln -s "$d" "$HOME/.claude/skills/$name"
 done
